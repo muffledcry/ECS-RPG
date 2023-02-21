@@ -13,7 +13,7 @@ impl Entity {
   pub fn new(entity_type: EntityType) -> Entity {
     Entity {
       id: Uuid::new_v4(),
-      entity_type: EntityType,
+      entity_type: entity_type,
       components: HashMap::new(),
     }
   }

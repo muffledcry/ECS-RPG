@@ -1,3 +1,4 @@
+#[derive(Debug, Clone)]
 pub struct Name {
   pub name: String,
 }
@@ -9,8 +10,8 @@ impl Name {
     }
   }
   
-  pub fn get_name(&self) -> String {
-    self.name
+  pub fn get_name(&self) -> &str {
+    &self.name
   }
 
   pub fn change_name(&mut self, new_name: &str) {

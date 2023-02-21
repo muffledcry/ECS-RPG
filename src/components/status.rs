@@ -1,6 +1,6 @@
 use crate::entities::entity::Entity;
 use crate::components::health;
-use crate::components::Magic;
+use crate::components::magic::Magic;
 
 pub struct Status {
     effects: Vec<StatusEffect>,
@@ -44,27 +44,27 @@ pub enum StatusEffect {
 
 impl StatusEffect {
   pub fn apply(&self, target: &mut Entity) {
-    match self {
-      StatusEffect::Poison(amount) => {
-        if let Some(mut health) = target.get_component_mut::<Health>() {
-          health.decrease(*amount);
-        }
-      }
-      StatusEffect::Paralyze(duration) => {
-        if let Some(mut actions) = target.get_component_mut::<Actions>() {
-          actions.set_disabled(*duration);
-        }
-      }
-      StatusEffect::Sick(amount) => {
-        if let Some(mut magic) = target.get_component_mut::<Magic>() {
-          magic.decrease(*amount);
-        }
-      }
-      StatusEffect::Mezmerized(duration) => {
-        if let Some(mut actions) = target.get_component_mut::<Actions>() {
-          actions.decrease_frequency(*duration);
-        }
-      }
-    }
+    // match self {
+    //   StatusEffect::Poison(amount) => {
+    //     // if let Some(mut health) = target.get_component_mut::<Health>() {
+    //     //   health.decrease(*amount);
+    //     }
+    //   }
+    //   StatusEffect::Paralyze(duration) => {
+    //     if let Some(mut actions) = target.get_component_mut::<Actions>() {
+    //       actions.set_disabled(*duration);
+    //     }
+    //   }
+    //   StatusEffect::Sick(amount) => {
+    //     if let Some(mut magic) = target.get_component_mut::<Magic>() {
+    //       magic.decrease(*amount);
+    //     }
+    //   }
+    //   StatusEffect::Mezmerized(duration) => {
+    //     if let Some(mut actions) = target.get_component_mut::<Actions>() {
+    //       actions.decrease_frequency(*duration);
+    //     }
+    //   }
+    // }
   }
 }

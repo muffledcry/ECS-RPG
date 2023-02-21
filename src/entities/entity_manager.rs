@@ -1,4 +1,5 @@
 use super::entity::Entity;
+use crate::components::entity_type::EntityType;
 use std::collections::HashMap;
 use uuid::Uuid;
 
@@ -14,7 +15,7 @@ impl EntityManager {
   }
 
   pub fn create_entity(&mut self) -> Uuid {
-    let entity = Entity::new();
+    let entity = Entity::new(EntityType::Unknown);
     let id = entity.get_id();
     self.add_entity(entity);
     id //Use this returned ID to add components.
