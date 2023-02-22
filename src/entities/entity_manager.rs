@@ -34,4 +34,8 @@ impl EntityManager {
     self.entities.get(&id)
   }
 
+  pub fn get_entity_mut(&mut self, id: Uuid) -> Option<&mut Entity> {
+    self.entities.get_mut(&id)
+  }
+
 }
