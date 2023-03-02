@@ -1,3 +1,4 @@
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Health {
   current: i32,
   max: i32,

@@ -9,3 +9,4 @@ clearscreen = "2.0.0"
 serde = {version = "1.0.152", features = ["derive"]}
 serde_json = "1.0.93"
 uuid = {version = "1.3.0", features = ["v4", "fast-rng", "macro-diagnostics"]}
+dashmap = "5.4.0"
